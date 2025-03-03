@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Айсберг Кузинатра</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://cdn.discordapp.com/attachments/1080468096734732309/1346050160144289813/photo_2025-03-02_20-09-14.png?ex=67c6c666&is=67c574e6&hm=86cad698180526208a84c590641e6abcc53b21f4e88b9c9117b7bb20c34b6272&') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            transition: background 1s ease-in-out;
+        }
+        .container { max-width: 800px; margin: auto; padding: 20px; background: rgba(0, 0, 0, 0.6); border-radius: 15px; }
+        .level { margin: 20px 0; padding: 15px; border-radius: 10px; cursor: pointer; transition: background 0.5s, transform 0.3s; }
+        .level:hover { transform: scale(1.05); }
+        .hidden { display: none; opacity: 0; transition: opacity 1s ease-in-out; }
+        #level1 { background: #005f9e; }
+        #level2 { background: #004a80; }
+        #level3 { background: #003666; }
+        #level4 { background: #00264d; }
+        #level5 { background: #001933; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Айсберг Кузинатра</h1>
+        <p>Кузинатра.</p>
+        
+        <div class="level" onclick="toggleLevel('level1')">Первый уровень (Основное)</div>
+        <div id="level1" class="hidden">Мемы, основные рубрики, известные видео.</div>
+        
+        <div class="level" onclick="toggleLevel('level2')">Второй уровень (Глубже)</div>
+        <div id="level2" class="hidden">Старые видео, внутренняя терминология.</div>
+        
+        <div class="level" onclick="toggleLevel('level3')">Третий уровень (Теории)</div>
+        <div id="level3" class="hidden">Необычные теории, скрытые смыслы.</div>
+        
+        <div class="level" onclick="toggleLevel('level4')">Четвёртый уровень (Загадки)</div>
+        <div id="level4" class="hidden">Утраченные видео, загадочные моменты.</div>
+        
+        <div class="level" onclick="toggleLevel('level5')">Последний уровень (Неизвестное)</div>
+        <div id="level5" class="hidden">Редкие факты, тайны Кузинатра.</div>
+    </div>
+
+    <script>
+        function toggleLevel(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+                setTimeout(() => element.style.opacity = "1", 10);
+            } else {
+                element.style.opacity = "0";
+                setTimeout(() => element.style.display = "none", 1000);
+            }
+        }
+    </script>
+</body>
+</html>
